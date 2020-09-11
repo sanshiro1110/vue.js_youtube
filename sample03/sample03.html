@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <input v-if="isFormDisplay" type="text" placeholder="ユーザー名">
+    <input v-else type="text" placeholder="パスワード">
+    <button v-on:click="changeFormDisplay">フォーム表示の切り替え</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: "#app",
+      data: {
+        isFormDisplay: true,
+      },
+      methods: {
+        changeFormDisplay: function() {
+          this.isFormDisplay =  !this.isFormDisplay;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

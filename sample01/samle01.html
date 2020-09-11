@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js入門</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(person, index) in persons">
+        {{ index + 1 }}{{ person.name }}({{ person.age }}歳)
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        persons: [
+          {
+            name: "鈴木",
+            age: 39,
+            address: {
+              prefecture: "大阪府",
+              city: "大阪市",
+              town: "大坂町",
+              othre: "１丁目１番地",
+            }
+          },
+          {
+            name: "吉田",
+            age: 25,
+            address: {
+              prefecture: "大阪府",
+              city: "大阪市",
+              town: "大坂町",
+              othre: "2丁目3番地",
+            }
+          },
+          {
+            name: "山田",
+            age: 19,
+            address: {
+              prefecture: "大阪府",
+              city: "大阪市",
+              town: "大坂町",
+              othre: "3丁目3番地",
+            }
+          },
+        ]
+      },
+    })
+  </script>
+</body>
+</html>
